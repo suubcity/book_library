@@ -1,0 +1,151 @@
+/*#region css reset*/
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  font-family: Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*#endregion*/
+
+
+
+
+
+body {
+  color: whitesmoke;
+  background: rgb(251, 238, 193);
+}
+/*#region button*/
+button {
+  color: inherit;
+  font-size: 1rem;
+  display: inline-block;
+  border: none;
+  padding: 1em 2rem;
+  margin: 0;
+  text-decoration: none;
+  background: black;
+  font-family: sans-serif;
+  border-radius: 0;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+button:focus {
+  transform: scale(0.89);
+}
+
+button:hover {
+  transform: scale(0.89);
+}
+/*#endregion*/
+
+h1 {
+  font-size: 1.5rem;
+  padding: 0 1rem 0 0.5rem;
+}
+
+#navbar {
+  justify-content: space-between;
+  padding: 0.5rem;
+  display: flex;
+
+  background: rgb(101, 158, 188);
+
+  align-items: center;
+}
+
+#formContainer {
+  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+#newBookInputForm {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.2rem;
+
+  background: black;
+}
+#newBookInputForm > * {
+  padding: 0.5rem;
+}
+#mainPageContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100vw;
+  height: 100%;
+}
+
+.book {
+  line-height: 2rem;
+  padding: 1.3rem;
+  margin: 1rem;
+  background: rgb(101, 158, 188);
+  border-radius: 1rem;
+  
+}
+
+.bookButton {
+  margin: .5rem;
+  background: whitesmoke;
+  color: black;
+  }
+
+/*#region toggle classes*/
+.blurred {
+  filter: blur(3px);
+}
+
+.displayFlex {
+  display: flex;
+}
+
+.displayNone {
+  display: none;
+}
+/*#endregion*/
+

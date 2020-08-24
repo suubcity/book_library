@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Library</title>
+</head>
+<body>
+    <div id="formContainer" class="displayNone">
+        <form id="newBookInputForm" action="">
+          <label for="titleTextInput">
+            Title 
+          </label>
+          <input id="titleTextInput" type="text" required />
+    
+          <label for="authorTextInput">
+            Author 
+          </label>
+          <input id="authorTextInput" type="text" required />
+    
+          <label for="pagesNumberInput">
+            Pages 
+          </label>
+          <input id="pagesNumberInput" type="number" required />
+    
+          <p>Have you read this book?</p>
+            <label for="bookReadRadio">
+              <input id="bookReadRadio" value="yes" type="radio" name="readRadio" />Yes 
+            </label>
+            <label for="bookNotReadRadio">
+              <input id="bookNotReadRadio" value="no" type="radio" name="readRadio" />No
+            </label>
+          </lable>
+    
+          <input id="saveBookButton" type="button" value="Save Book" />
+        </form>
+      </div>
+
+    <nav id="navbar">
+        <h1>Book Library</h1>
+        <button id="addBookButton">Add New Book</button>
+    </nav>
+    <div id="mainPageContainer">
+
+        
+    </div>
+   
+    <script src="script.js"></script>
+</body>
+</html>
