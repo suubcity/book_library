@@ -20,6 +20,8 @@ function updateReadButtonQuerySelector() {
 
 const FORM_CONTAINER = document.querySelector("#formContainer");
 
+const CLOSE_FORM_DIV = document.querySelector("#closeFormDiv");
+
 const TITLE_TEXT_INPUT = document.querySelector("#titleTextInput");
 
 const AUTHOR_TEXT_INPUT = document.querySelector("#authorTextInput");
@@ -41,12 +43,21 @@ ADD_BOOK_BUTTON.addEventListener("click", () => {
   TITLE_TEXT_INPUT.focus();
 });
 
-SAVE_BOOK_BUTTON.addEventListener("click", () => {
+CLOSE_FORM_DIV.addEventListener("click", () => {
   toggleDisplayFlex(FORM_CONTAINER);
   toggleDisplayNone(FORM_CONTAINER);
   toggleBlur(MAIN_PAGE_CONTAINER);
-  addNewBookToLibrary(getTitle(), getAuthor(), getPages(), getRead());
-  updatePage();
+  clearForm();
+});
+
+SAVE_BOOK_BUTTON.addEventListener("click", () => {
+  if (checkFormComplete()) {
+    toggleDisplayFlex(FORM_CONTAINER);
+    toggleDisplayNone(FORM_CONTAINER);
+    toggleBlur(MAIN_PAGE_CONTAINER);
+    addNewBookToLibrary(getTitle(), getAuthor(), getPages(), getRead());
+    updatePage();
+  }
 });
 
 function addDeleteBookEventListener() {
@@ -98,7 +109,7 @@ function getRead() {
 
 //#endregion
 
-//#region bookFunctions 
+//#region bookFunctions
 
 function addNewBookToLibrary(title, author, pages, read) {
   let newBook = new Book(title, author, pages, read);
@@ -132,7 +143,7 @@ function deleteBook(index) {
 
 //#endregion
 
-//#region pageFunctions 
+//#region pageFunctions
 
 function updatePage() {
   let bookList = getBookList();
@@ -152,7 +163,7 @@ function getBookList() {
   bookLibrary.forEach((book, index) => {
     bookList += `<div class="book" id="book${index}">${Object.entries(
       book
-    )}<br><button  class="readButton bookButton">Toggle Read</button><br><button class="deleteButton bookButton">Delete Book</button></div>`;
+    )}<div><button  class="readButton bookButton">Toggle Read</button><button class="deleteButton bookButton">Delete Book</button></div></div>`;
   });
   return bookList;
 }
@@ -167,6 +178,13 @@ function cleanUpBookList(bookList) {
   return bookList;
 }
 
+function checkFormComplete() {
+  if (titleTextInput.value && authorTextInput.value && pagesNumberInput.value) {
+    return true;
+  }
+  return false;
+}
+
 function clearForm() {
   titleTextInput.value = "";
   authorTextInput.value = "";
@@ -177,11 +195,15 @@ function clearForm() {
 
 //#endregion
 
-
 addNewBookToLibrary("Harry Potter", "JK Rowling", 334, true);
 addNewBookToLibrary("High Output Management", "Andrew S. Grove", 634, false);
 addNewBookToLibrary("The Beach", "Alex Garland", 345, false);
-addNewBookToLibrary("Influence: The Psychology of Persuasion", "Robert B. Cialdini", 764, true);
+addNewBookToLibrary(
+  "Influence: The Psychology of Persuasion",
+  "Robert B. Cialdini",
+  764,
+  true
+);
 addNewBookToLibrary("Midnight Sun", "Stephenie Meyer", 233, true);
 addNewBookToLibrary("Untamed", "Glennon Doyle", 333, false);
 

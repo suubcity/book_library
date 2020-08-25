@@ -39,26 +39,22 @@ img {
 
 /*#endregion*/
 
-
-
-
-
 body {
   color: whitesmoke;
-  background: rgb(251, 238, 193);
+  background: whitesmoke;
 }
 /*#region button*/
 button {
-  color: inherit;
-  font-size: 1rem;
+  padding:  .5rem 1rem;
+  margin: .5rem;
+  border-radius: .1rem;
+  background: whitesmoke;
+  color: black;
+font-size: 1rem;
   display: inline-block;
   border: none;
-  padding: 1em 2rem;
-  margin: 0;
+    margin: .2rem;
   text-decoration: none;
-  background: black;
-  font-family: sans-serif;
-  border-radius: 0;
   cursor: pointer;
   text-align: center;
   transition: background 250ms ease-in-out, transform 150ms ease;
@@ -71,27 +67,36 @@ button:focus {
 }
 
 button:hover {
-  transform: scale(0.89);
+  transform: scale(0.95);
 }
 /*#endregion*/
 
-h1 {
-  font-size: 1.5rem;
-  padding: 0 1rem 0 0.5rem;
+#spacer {
+  height: 4.2rem;
 }
 
 #navbar {
-  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  justify-content: flex-start
   padding: 0.5rem;
   display: flex;
-
   background: rgb(101, 158, 188);
-
   align-items: center;
+  -webkit-box-shadow: 10px 10px 18px -8px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 18px -8px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 18px -8px rgba(0,0,0,0.75);
 }
 
+h1 {
+  margin: .7rem .9em .7rem .9em;
+}
+
+
 #formContainer {
-  
   position: fixed;
   top: 0;
   left: 0;
@@ -102,13 +107,27 @@ h1 {
   align-items: center;
 }
 
+#closeFormDivContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#closeFormDiv {
+  cursor: pointer;
+}
+
 #newBookInputForm {
+  border: .05rem solid black;
+  color: black;
   padding: 2rem;
   display: flex;
   flex-direction: column;
   border-radius: 0.2rem;
+  background: whitesmoke;
+  -webkit-box-shadow: 10px 10px 31px -10px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 31px -10px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 31px -10px rgba(0,0,0,0.75);
 
-  background: black;
 }
 #newBookInputForm > * {
   padding: 0.5rem;
@@ -120,20 +139,21 @@ h1 {
   height: 100%;
 }
 
+
 .book {
+  -webkit-box-shadow: 10px 10px 18px -8px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 18px -8px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 18px -8px rgba(0,0,0,0.75);
   line-height: 2rem;
   padding: 1.3rem;
   margin: 1rem;
   background: rgb(101, 158, 188);
-  border-radius: 1rem;
+  border-radius: .1rem;
+  
   
 }
 
-.bookButton {
-  margin: .5rem;
-  background: whitesmoke;
-  color: black;
-  }
+
 
 /*#region toggle classes*/
 .blurred {
