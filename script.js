@@ -116,26 +116,43 @@ function addNewBookToLibrary(title, author, pages, read) {
   pushBookToArray(newBook, bookLibrary);
 }
 
-//constructor function
-function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
+//constructor functions
+// function Book(title, author, pages, read) {
+//   this.title = title;
+//   this.author = author;
+//   this.pages = pages;
+//   this.read = read;
+// }
+
+class Book {
+  constructor(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  }
+  toggleRead() {
+    if (this.read === true) {
+      this.read = false;
+    } else {
+      this.read = true;
+    }
+    updatePage();
+  }
 }
 
 function pushBookToArray(book, location) {
   location.push(book);
 }
 
-Book.prototype.toggleRead = function () {
-  if (this.read === true) {
-    this.read = false;
-  } else {
-    this.read = true;
-  }
-  updatePage();
-};
+// Book.prototype.toggleRead = function () {
+//   if (this.read === true) {
+//     this.read = false;
+//   } else {
+//     this.read = true;
+//   }
+//   updatePage();
+// };
 
 function deleteBook(index) {
   bookLibrary.splice(index, 1);
